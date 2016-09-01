@@ -1,29 +1,33 @@
 package net.member.action;
+
 import java.io.PrintWriter;
 import javax.servlet.http.*;
 import net.member.db.MemberDAO;
+
 public class MemberDeleteAction implements Action{
-	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
-	throws Exception{
-		ActionForward forward=new ActionForward();
-		HttpSession session=request.getSession();
-		String id=(String)session.getAttribute("id");
+	
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		
-		if(id==null){
+		ActionForward forward = new ActionForward();
+		
+		HttpSession session = request.getSession();// ? 클라이언 > 서버 ( 세션 id 생성 )
+		String id = (String)session.getAttribute("id");
+		
+		if(id == null){
 			forward.setRedirect(true);
 			forward.setPath("./MemberLogin.me");
 			return forward;
 		}
-		MemberDAO memberdao=new MemberDAO();
-		String pass=request.getParameter("MEMBER_PW");
+		
+		MemberDAO memberdao = new MemberDAO();//객체 선언 생성 할당
+		String pass = request.getParameter("MEMBER_PW");//리턴값 문자열 변수명 pass 
 		
 		try{
-			int check=memberdao.deleteMember(id, pass);
+			int check = memberdao.deleteMember(id, pass);
 			
 			if(check == 1){
 				
 				session.invalidate();
-				
 				forward.setPath("./member/member_out_ok.jsp"); 
 				
 			}else{

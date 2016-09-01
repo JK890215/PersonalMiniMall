@@ -207,7 +207,7 @@ public class MemberDAO {
 	
 	public int deleteMember(String id, String pw) throws SQLException{
 		String sql=null;
-		int x=-1;
+		int x = -1;
 		
 		try{
 			con = ds.getConnection();
@@ -218,7 +218,7 @@ public class MemberDAO {
 			rs=pstmt.executeQuery();
 			
 			if(rs.next()){
-				String memberpw=rs.getString("MEMBER_PW");
+				String memberpw = rs.getString("MEMBER_PW");
 				if(memberpw.equals(pw)){
 					sql="delete from member where MEMBER_ID=?";
 					pstmt=con.prepareStatement(sql);

@@ -23,29 +23,29 @@
 	
 	    <thead>
 	      <tr>
-	        <th>List</th>
+	        <th>관리자 List</th>
 	      </tr>
 	    </thead>
 	
 	    <tbody>
 	    
 			<tr class="primary"> 
-			    <td><a href="<%= request.getContextPath() %>/admingoods/GoodsAddForm.ag"> 01_관리자 상품 등록 테스트 </a><br><br></td>
+			    <td><a href="${pageContext.request.contextPath}/admingoods/GoodsAddForm.ag"> 01_관리자 상품 등록 테스트 </a><br><br></td>
 			</tr>
 			<tr class="success">
-			    <td><a href="<%= request.getContextPath() %>/admingoods/GoodsList.ag"> 02_관리자 상품 리스트 테스트 </a><br><br></td>
+			    <td><a href="${pageContext.request.contextPath}/admingoods/GoodsList.ag"> 02_관리자 상품 리스트 테스트 </a><br><br></td>
 			</tr>
 			<tr class="info">
-			   	<td><a href="<%= request.getContextPath() %>/member/MemberJoin.me"> 03_회원가입 테스트</a><br><br></td>
+			   	<td><a href="${pageContext.request.contextPath}/member/MemberJoin.me"> 03_회원가입 테스트</a><br><br></td>
 			</tr>
 			 <tr class="warning">
-			   	<td><a href="<%= request.getContextPath() %>/member/MemberLogin.me"> 04_로그인화면 테스트 </a><br><br></td>
+			   	<td><a href="${pageContext.request.contextPath}/member/MemberLogin.me"> 04_로그인화면 테스트 </a><br><br></td>
 			</tr>
 			  <tr class="danger">
-				<td><a href="<%= request.getContextPath() %>/goods/GoodsList.go?item=new_item&page=1"> 05_구매자 상품리스트 테스트 </a><br><br></td>
+				<td><a href="${pageContext.request.contextPath}/goods/GoodsList.go?item=new_item&page=1"> 05_구매자 상품리스트 테스트 </a><br><br></td>
 			</tr>
 			<tr class="primary">
-				<td><a href="<%= request.getContextPath() %>/goods/BasketList.ba?item=outwear&gr_goods_num=1&isitem=new"> 06_장바구니 리스트 테스트 </a><br><br></td>
+				<td><a href="${pageContext.request.contextPath}/goods/BasketList.ba?item=outwear&gr_goods_num=1&isitem=new"> 06_장바구니 리스트 테스트 </a><br><br></td>
 			</tr>
 	  	     
 	    </tbody>
@@ -56,8 +56,7 @@
 </html>
 
 
-<%-- 
-
+<%--
 <%
 	//06장바구니 리스트 테스트  <리스트에서 장바구니 테스트시에는 로그인 후 테스트>
 	//response.sendRedirect(request.getContextPath()+"/goods/BasketList.ba?item=outwear&gr_goods_num=1&isitem=new");
@@ -72,5 +71,4 @@
 	//01관리자 상품 등록 테스트
 	//response.sendRedirect(request.getContextPath()+"/admingoods/GoodsAddForm.ag");
 %>
-
- --%>
+--%>

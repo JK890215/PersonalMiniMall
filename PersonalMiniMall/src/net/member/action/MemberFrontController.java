@@ -9,8 +9,11 @@ import javax.servlet.http.HttpServletResponse;
 
 
 public class MemberFrontController extends HttpServlet{
+	
 	public void service(HttpServletRequest request, HttpServletResponse response)
+	
 	throws IOException, ServletException{
+		
 		request.setCharacterEncoding("euc-kr");
 		 String RequestURI=request.getRequestURI();
 		 String contextPath=request.getContextPath();
@@ -21,7 +24,7 @@ public class MemberFrontController extends HttpServlet{
 			 forward=new ActionForward();
 			 forward.setPath("/member/member_login.jsp");
 		 }else if(command.equals("/member/MemberJoin.me")){
-			 forward=new ActionForward();
+			 forward = new ActionForward();
 			 forward.setPath("/member/member_join.jsp");
 		 }else if(command.equals("/member/MemberFind.me")){
 			 forward=new ActionForward();
@@ -63,7 +66,7 @@ public class MemberFrontController extends HttpServlet{
 		 }else if(command.equals("/member/MemberDeleteAction.me")){
 			 action  = new MemberDeleteAction();
 			 try {
-				 forward=action.execute(request, response);
+				 forward = action.execute(request, response);
 			 } catch (Exception e) {
 				 e.printStackTrace();
 			 }
@@ -93,8 +96,7 @@ public class MemberFrontController extends HttpServlet{
 		 if(forward.isRedirect()){
 			 response.sendRedirect(forward.getPath());
 		 }else{
-			 RequestDispatcher dispatcher=
-				 request.getRequestDispatcher(forward.getPath());
+			 RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getPath());
 			 dispatcher.forward(request, response);
 		 }	 
 		 }
